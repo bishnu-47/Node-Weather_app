@@ -42,10 +42,12 @@ app.get('/about', (req , res) =>{
 app.get('/help', (req ,res) =>{
     res.render('help',{
         title:"Help",
-        name:"Wishnu"
+        name:"Wishnu",
+        helpText:"Help page will be updated soon. Stay tuned ;)"
     })
 })
 
+// API requests
 app.get('/weather',(req , res) =>{
     const address=req.query.address;
     if(!address){
@@ -53,6 +55,7 @@ app.get('/weather',(req , res) =>{
             error:"address must be entered!"
         })
     }
+    // data comming form geoCode.hbs and forecast.hbs
     geoCode(address, (error, {latitude , longitude , location} ={}) =>{
         if(error){
             res.send({error})
@@ -62,9 +65,9 @@ app.get('/weather',(req , res) =>{
                     res.send(error);
                 }else{
                     res.send({
-                        location,
-                        forecast: forecastData,
-                        address
+                        location, //geoCode()
+                        forecast: forecastData, //forecast()
+                        address //geoCode(),params
                     })
                 }
             })

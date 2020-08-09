@@ -12,6 +12,8 @@ body {
 
 .main-content {
     flex-grow: 1;
+    letter-spacing: 0.05em;
+    line-height: 1.7em;
 }
 
 footer {
@@ -28,7 +30,7 @@ header {
 
 h1 {
     font-size: 64px;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
 header a {

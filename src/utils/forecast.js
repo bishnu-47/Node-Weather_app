@@ -10,7 +10,10 @@ const forecast= (latitude,longitude,callback)=>{
             callback('Enter correct Coordinates',undefined);
         }else{
             callback(undefined,
-                body.current.weather_descriptions[0] + '. The current temperatue is '+ body.current.temperature + ' degree C. And it feels like '+ body.current.feelslike +' degree C'
+                body.current.weather_descriptions[0] + '. The current temperatue is '+
+                    body.current.temperature + ' degree C. And it feels like '+ body.current.feelslike +
+                        ' degree C. Chances of rain is '+body.current.precip+'%. Humidity is '+
+                            body.current.humidity+"% and cloud-cover is "+body.current.cloudcover+'%.'
             );
         }
     });
